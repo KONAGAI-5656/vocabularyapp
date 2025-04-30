@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>単語詳細</title>
+</head>
+<body>
+<h1 th:text="${word.headword}">単語</h1>
+<p>発音記号: <span th:text="${word.ipa}"></span></p>
+<p>意味: <span th:text="${word.jpnMeaning}"></span></p>
+
+<h2>例文</h2>
+<ul>
+    <li th:each="example : ${word.examples}">
+        <p th:text="${example.engSentence}"></p>
+        <p th:text="${example.jpnSentence}"></p>
+    </li>
+</ul>
+
+<a href="/words">← 戻る</a>
+</body>
+</html>

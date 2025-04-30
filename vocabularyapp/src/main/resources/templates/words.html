@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>単語一覧</title>
+</head>
+<body>
+<h1>単語一覧</h1>
+<ul>
+    <li th:each="word : ${words}">
+        <a th:href="@{'/words/' + ${word.wordid}}" th:text="${word.headword}"></a>
+    </li>
+</ul>
+</body>
+</html>
