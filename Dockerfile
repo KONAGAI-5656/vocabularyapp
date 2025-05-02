@@ -6,6 +6,7 @@ WORKDIR /app
 # Maven Wrapper とソースコードをコピー
 COPY . .
 
+RUN chmod +x mvnw
 # テストをスキップしてビルド
 RUN ./mvnw clean package -DskipTests
 
